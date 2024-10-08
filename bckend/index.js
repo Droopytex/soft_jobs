@@ -15,6 +15,21 @@ app.use(morgan("dev"));
 
 const jwt_secret_key = "6K!U?ñx¡Yk7T7P7Q7pZ$Aa~Y2";
 
+const verificarToken = (req, res, next) => {
+  const token = req.header("Authorization")?.split(" ")[1]; // Se espera que el token esté en formato "Bearer <token>"
+  if (!token)
+    return res.status(401).send("Acceso denegado. No se proporcionó un token.");
+
+  try {
+    const verified = jwt.verify(token, jwt_secret_key); // Verifica el token
+    req.user = verified; // Decodifica el token y lo añade al request
+    next();
+  } catch (error) {
+    res.status(400).send("Token inválido.");
+  }
+};
+
+// ruta GET
 app.get("/usuarios", async (req, res) => {
   try {
     const users = await getUser();
@@ -28,6 +43,19 @@ app.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
     await verificarCredenciales(email, password);
+
+    const token = jwt.sign({ email }, jwt_secret_key);
+    res.json({ token });
+  } catch (error) {
+    console.log("Error en /login:", error);
+    res.status(error.code || 500).send(error.message);
+  }
+});
+
+/*app.post("/login", async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    await verificarCredenciales(email, password);
     const token = jwt.sign({ email }, jwt_secret_key);
     const Authorization = req.header("Authorization");
     res.send(token);
@@ -35,7 +63,7 @@ app.post("/login", async (req, res) => {
     console.log(error);
     res.status(error.code || 500).send(error);
   }
-});
+});*/
 
 app.post("/usuarios", async (req, res) => {
   try {
