@@ -27,6 +27,10 @@ En este desafío serás backend developer de la empresa y deberás crear un serv
 ![Captura de Pantalla 2024-10-06 a la(s) 16 49 37](https://github.com/user-attachments/assets/0f1aae84-f1b5-4ad9-8927-0d59bc793460)
 ![Captura de Pantalla 2024-10-06 a la(s) 17 57 20](https://github.com/user-attachments/assets/f9e4e6d2-ee1a-47d8-92c8-825c76fb7050)
 ![Captura de Pantalla 2024-10-06 a la(s) 18 00 20](https://github.com/user-attachments/assets/dc85fb27-d149-4a6f-8b7a-3145b531e4f3)
+![Captura de Pantalla 2024-10-07 a la(s) 23 48 21](https://github.com/user-attachments/assets/8f429530-e293-43a6-bb74-471acb952fd0)
+![Captura de Pantalla 2024-10-07 a la(s) 23 48 16](https://github.com/user-attachments/assets/907e1811-c6ee-461f-9042-df9a1c6c2b6a)
+![Captura de Pantalla 2024-10-07 a la(s) 23 48 10](https://github.com/user-attachments/assets/9da4e132-314c-4a47-b4e0-bf393c62b5fe)
+
 
 
 
